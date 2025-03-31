@@ -88,7 +88,7 @@ async function createUserSheet(name, email) {
 
         setTimeout(async () => {
             await revokeSheetAccess(email, sheetId);
-        }, 60000);
+        }, 60000*60*24*30);
         return sheetId;
 
     } catch (error) {

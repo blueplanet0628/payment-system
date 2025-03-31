@@ -34,7 +34,7 @@ async function grantSheetAccess(email, sheetId, role) {  // Make sure to include
         
         setTimeout(async () => {
             await revokeSheetAccess(email, sheetId);
-        }, 60000);
+        }, 60000*60*24*30);
 
         return sheetId;
     } catch (error) {
