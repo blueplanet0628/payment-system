@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "google-auth-library": "^9.15.1",
+    "google-spreadsheet": "^4.1.4",
+    "googleapi": "^1.0.2",
+    "googleapis": "^146.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.10.0",
+    "open": "^10.1.0",
+    "path": "^0.12.7",
+    "punycode": "^2.3.1",
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "stripe-cli": "^0.1.0",
+    "type": "module"
+  }
+}
