@@ -26,15 +26,15 @@ app.post('/webhook', webhook)
 
 app.use(express.json());
 
-app.post('/create-checkout-session', createCheckout)
+app.post('/api/create-checkout-session', createCheckout)
 
 
 app.post('/api/update-sheets', extrasheets)
 app.post('/api/create-payment-intent', clientSecret)
-app.post('/register', register)
-app.post('/login', login)
+app.post('/api/register', register)
+app.post('/api/login', login)
 
-app.get('/users', user)
+app.get('/api/users', user)
 app.get('/google-sheet', sheet)
 
 app.post('/api/save-instagram-id', addInstagram)
@@ -42,11 +42,11 @@ app.get('/api/instagram-id/:sheetId', getInstagram)
 app.post('/api/delete-instagram-id', deleteInstagram)
 app.post('/api/edit-instagram-id', editInstagram)
 
-app.get("/success", (req, res) => {
+app.get("/api/success", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "success.html"));
 });
 
-app.get("/cancel", (req, res) => {
+app.get("/api/cancel", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "cancel.html"));
 });
 

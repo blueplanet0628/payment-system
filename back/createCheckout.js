@@ -30,8 +30,8 @@ async function createCheckout(req, res) {
                  extraSheets: 0,
                
              },
-             success_url: "http://localhost:3000/success",
-             cancel_url: "http://localhost:3000/cancel",
+             success_url: "http://192.168.131.55:3000/success",
+             cancel_url: "http://192.168.131.55:3000/cancel",
          });
  
          await res.json({ id: session.id });
