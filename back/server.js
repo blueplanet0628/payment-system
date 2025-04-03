@@ -35,7 +35,7 @@ app.post('/api/register', register)
 app.post('/api/login', login)
 
 app.get('/api/users', user)
-app.get('/google-sheet', sheet)
+app.get('/api/google-sheet', sheet)
 
 app.post('/api/save-instagram-id', addInstagram)
 app.get('/api/instagram-id/:sheetId', getInstagram)
@@ -50,4 +50,4 @@ app.get("/api/cancel", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "cancel.html"));
 });
 
-app.listen(3000, () => console.log("🚀 Server running on http://localhost:3000"));
+app.listen(5000, () => console.log("🚀 Server running on http://localhost:5000"));
