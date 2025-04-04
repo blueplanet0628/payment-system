@@ -17,6 +17,7 @@
     "jwt-decode": "^4.0.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.0",
+    "node-cron": "^3.0.3",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.10.0",
     "open": "^10.1.0",
