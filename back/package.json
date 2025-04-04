@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "axios": "^1.8.4",
     "bcrypt": "^5.1.1",
@@ -25,7 +26,6 @@
     "stripe": "^17.7.0"
   },
   "devDependencies": {
-    "stripe-cli": "^0.1.0",
-    "type": "module"
+    "stripe-cli": "^0.1.0"
   }
 }
