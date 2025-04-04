@@ -41,8 +41,8 @@ export default function UsersPage() {
   }, [router]);
 
   useEffect(() => {
-    axios.get(`${process.env.URL}api/users`).then((res) => setUsers(res.data));
-    axios.get(`${process.env.URL}api/google-sheet`).then((res) => setBuyuser(res.data));
+    axios.get(`/api/users`).then((res) => setUsers(res.data));
+    axios.get(`/api/google-sheet`).then((res) => setBuyuser(res.data));
   }, []);
 
   useEffect(() => {
