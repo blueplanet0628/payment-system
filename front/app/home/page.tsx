@@ -30,7 +30,7 @@ const Home: React.FC = () => {
     
     try {
       const response = await axios.post(
-        `${process.env.URl}api/create-checkout-session`,
+        `/api/create-checkout-session`,
         { plan, email },
         { headers: { "Content-Type": "application/json" } }
       );

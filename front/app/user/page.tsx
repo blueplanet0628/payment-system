@@ -44,7 +44,7 @@ const Billing: React.FC<BillingProps> = ({ user }) => {
     if (extraSheets > 0) {
       setLoading(true);
       axios
-        .post(`${process.env.URL}api/create-payment-intent`, { extraSheets })
+        .post(`/api/create-payment-intent`, { extraSheets })
         .then((response) => {
           setClientSecret(response.data.clientSecret);
           setLoading(false);
@@ -86,7 +86,7 @@ const Billing: React.FC<BillingProps> = ({ user }) => {
       } else if (paymentIntent.status === "succeeded") {
         console.log("Payment success");
 
-      const res = await axios.post(`${process.env.URL}api/update-sheets`, {
+      const res = await axios.post(`/api/update-sheets`, {
           email: user.email,
           extraSheets,
         });
@@ -183,7 +183,7 @@ const BillingPage: React.FC = () => {
     }
 
     axios
-      .get(`${process.env.URL}api/google-sheet`)
+      .get(`/api/google-sheet`)
       .then((res) => setUsers(res.data))
       .catch((err) => console.error("Error fetching users:", err));
   }, [router]);
@@ -232,7 +232,7 @@ const BillingPage: React.FC = () => {
         if (!user?.sheetId) return; // Ensure sheetId exists
   
         try {
-          const res = await axios.get(`${process.env.URL}api/instagram-id/${user.sheetId}`);
+          const res = await axios.get(`/api/instagram-id/${user.sheetId}`);
           console.log(res.data, 'Fetched Instagram IDs');
           setInstagramId(res.data.instagramIds || []); // Ensure data is an array
         } catch (error) {
@@ -257,7 +257,7 @@ const BillingPage: React.FC = () => {
       }
   
       try {
-        const response = await axios.post(`${process.env.URL}api/save-instagram-id`, {
+        const response = await axios.post(`/api/save-instagram-id`, {
           id: newId,
           sheet: user.sheetId,
         });
@@ -265,7 +265,7 @@ const BillingPage: React.FC = () => {
         console.log(response.data, 'Response after saving');
   
         if (response.status === 200) {
-          const res = await axios.get(`${process.env.URL}api/instagram-id/${user.sheetId}`);
+          const res = await axios.get(`/api/instagram-id/${user.sheetId}`);
           console.log(res, 'res');
   
           setInstagramId(res.data.instagramIds || []);
@@ -291,7 +291,7 @@ const BillingPage: React.FC = () => {
       if (!editId.trim() || !newId.trim() || !user?.sheetId) return;
   
       try {
-        const response = await axios.post(`${process.env.URL}api/edit-instagram-id`, {
+        const response = await axios.post(`/api/edit-instagram-id`, {
           oldId: editId,
           newId: newId,
           sheet: user.sheetId,
@@ -300,7 +300,7 @@ const BillingPage: React.FC = () => {
         console.log(response.data, 'Response after editing');
   
         if (response.status === 200) {
-          const res = await axios.get(`${process.env.URL}api/instagram-id/${user.sheetId}`);
+          const res = await axios.get(`/api/instagram-id/${user.sheetId}`);
           console.log(res, 'res');
   
           setInstagramId(res.data.instagramIds || []);
@@ -317,7 +317,7 @@ const BillingPage: React.FC = () => {
     // Delete Instagram ID
     const del = async (instagramId: string) => {
       try {
-        const response = await axios.post(`${process.env.URL}api/delete-instagram-id`, {
+        const response = await axios.post(`/api/delete-instagram-id`, {
           id: instagramId,
           sheet: user.sheetId,
         });
@@ -325,7 +325,7 @@ const BillingPage: React.FC = () => {
         console.log(response.data, 'Response after deleting');
   
         if (response.status === 200) {
-          const res = await axios.get(`${process.env.URL}api/instagram-id/${user.sheetId}`);
+          const res = await axios.get(`/api/instagram-id/${user.sheetId}`);
           console.log(res, 'res');
   
           setInstagramId(res.data.instagramIds || []);

@@ -22,7 +22,7 @@ export default function RegisterPage() {
 
     try {
       console.log(email, name, 'eee');
-      const response = await axios.post(`${process.env.URL}api/register`, {
+      const response = await axios.post(`/api/register`, {
         email,
         password,
         name
