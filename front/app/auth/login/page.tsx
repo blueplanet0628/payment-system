@@ -12,6 +12,7 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    
 
     try {
       const response = await axios.post(`/api/login`, {
